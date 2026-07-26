@@ -1,0 +1,60 @@
+generated: '2026-07-20'
+method: probed
+source: DNS + TCP/TLS probe of dajiabao.com (api-evangelist enrichment pipeline)
+domain: dajiabao.com
+reachable: false
+summary: >-
+  dajiabao.com resolves in DNS but serves no web content. Both TCP/80 and TCP/443
+  time out (connection refused / filtered) from the probe host, so no HTTP, TLS,
+  HSTS, or /.well-known/ surface could be evaluated. Mail is delegated to Tencent
+  Exmail. No email-authentication or certificate-issuance policy records are
+  published.
+dns:
+  a:
+  - 139.196.207.93
+  nameservers:
+  - ns1.ename.net
+  - ns2.ename.net
+  mx:
+  - priority: 5
+    host: mxbiz1.qq.com
+  - priority: 10
+    host: mxbiz2.qq.com
+  dnssec:
+    enabled: false
+    evidence: no DS record at the parent zone
+  caa:
+    present: false
+    evidence: no CAA RRset on dajiabao.com
+registration:
+  registrar: eName Technology Co., Ltd.
+  created: '2010-07-16'
+  expires: '2028-07-16'
+  status:
+  - clientDeleteProhibited
+  - clientTransferProhibited
+email_authentication:
+  spf:
+    present: false
+    evidence: no v=spf1 TXT record on dajiabao.com
+  dmarc:
+    present: false
+    evidence: no TXT record at _dmarc.dajiabao.com
+transport:
+  https:
+    reachable: false
+    port: 443
+    evidence: TCP connect to 139.196.207.93:443 refused/timed out
+  http:
+    reachable: false
+    port: 80
+    evidence: TCP connect to 139.196.207.93:80 refused/timed out
+  tls: null
+  hsts: null
+well_known:
+  probed: false
+  evidence: host unreachable over HTTP/HTTPS; /.well-known/ could not be requested
+notes:
+- The unrelated domain dajiabao.cn (154.89.236.95) serves SEO-spam/adult keyword
+  content and is NOT associated with this company. It was checked and deliberately
+  excluded from this profile.

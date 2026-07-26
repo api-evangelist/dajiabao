@@ -1,7 +1,30 @@
 aid: dajiabao
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/dajiabao.png
 name: dajiabao
-description: dajiabao is a company surfaced as a portfolio company of qiming and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  dajiabao is a company surfaced as a portfolio company of the Chinese venture firm
+  Qiming and added to the API Evangelist network as a lead for enrichment. An
+  enrichment pass on 2026-07-20 found no reachable public surface: dajiabao.com
+  resolves in DNS (139.196.207.93, an Alibaba Cloud Shanghai address, nameservers at
+  eName) but both TCP/80 and TCP/443 time out, so there is no website, developer
+  portal, documentation, or /.well-known/ discovery surface to profile. Mail is
+  delegated to Tencent Exmail (mxbiz1/mxbiz2.qq.com), which indicates the
+  registration is still actively used even though the web presence is dark. Searches
+  of npm, PyPI, and crates.io returned no packages under this name, and the company
+  publishes no OpenAPI, SDK, CLI, or MCP surface that the network can index. This
+  profile is retained as a verified-dark lead and should be re-probed on a later
+  round in case the company relaunches a public site.
 url: https://raw.githubusercontent.com/api-evangelist/dajiabao/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +34,13 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Venture Backed
+- Qiming
+- China
+- Portfolio Lead
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +50,10 @@ maintainers:
 common:
 - type: Website
   url: https://dajiabao.com
+- type: DomainSecurity
+  url: security/dajiabao-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
